@@ -19,10 +19,10 @@ import javax.persistence.Query;
  */
 public abstract class BaseRepository<T> {
 
-    private  EntityManager em;
+    private EntityManager em;
     private String persistUnit;
     private Class entityClass;
-    private  EntityManagerFactory emf;
+    private EntityManagerFactory emf;
 
     
  
@@ -30,7 +30,7 @@ public abstract class BaseRepository<T> {
     public BaseRepository(String persistUnit, Class entityClass) {
         
         this.persistUnit = persistUnit;
-        emf=Persistence.createEntityManagerFactory(this.persistUnit) ;
+        emf=Persistence.createEntityManagerFactory(persistUnit);
         this.em=getEntityManager();
         this.entityClass=entityClass;
 

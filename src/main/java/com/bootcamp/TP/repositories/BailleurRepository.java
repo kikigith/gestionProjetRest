@@ -15,7 +15,7 @@ import com.bootcamp.TP.entities.Bailleur;
 public class BailleurRepository extends BaseRepository<Bailleur>{
  
     public BailleurRepository(String persistUnit) {
-        super(persistUnit,Bailleur.class);
+        super(persistUnit, Bailleur.class);
     }
   
 }

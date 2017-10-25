@@ -27,6 +27,7 @@
   </persistence-unit>
   <persistence-unit name="TPPU-DERBY" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    
     <class>com.bootcamp.TP.entities.Bailleur</class>
     <class>com.bootcamp.TP.entities.Beneficiaire</class>
     <class>com.bootcamp.TP.entities.Fournisseur</class>
@@ -50,4 +51,5 @@
       <property name="eclipselink.canonicalmodel.subpackage" value="one"/>
     </properties>
   </persistence-unit>
+  
 </persistence>

@@ -11,6 +11,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import com.bootcamp.TP.entities.Bailleur;
 import com.bootcamp.TP.repositories.BailleurRepository;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;
@@ -33,14 +35,21 @@ import javax.ws.rs.core.Response;
  * @author ARESKO
  */
 @Path("/bailleur")
+@Api(value = "bailleurs", description = "RESTful API to interact with customer resources.")
 public class BailleurRestController {
 
     //instanciation d'un bailleur repository
-    BailleurRepository bailleurRepository = new BailleurRepository("PostgresPuWeb");
+    BailleurRepository bailleurRepository = new BailleurRepository("TPPU-DERBY");
 
     @GET
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation(
+            value = "voir une donnée spéciique",
+            notes = "mettre un commentaire",
+            response = Bailleur.class,
+            responseContainer = "List"
+    )
     public Response getList() throws SQLException {
         List<Bailleur> bailleurs = bailleurRepository.findAll();
         //access par le concept CORS

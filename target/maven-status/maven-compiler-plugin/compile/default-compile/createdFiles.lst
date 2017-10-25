@@ -1,5 +1,6 @@
 com\bootcamp\TP\entities\Bailleur.class
 com\bootcamp\TP\entities\one\Projet_.class
+com\bootcamp\TP\json\JsonToJava.class
 com\bootcamp\TP\repositories\Fournisseur_ProgrammeRepository.class
 com\bootcamp\TP\entities\two\Programme_Fournisseur_.class
 com\bootcamp\TP\entities\one\Personne_.class
@@ -12,16 +13,16 @@ com\bootcamp\TP\entities\two\Fournisseur_.class
 com\bootcamp\TP\entities\two\IndicateurQualitatif_.class
 com\bootcamp\TP\repositories\IndicateurPerformanceRepository.class
 com\bootcamp\TP\rest\controllers\FournisseurRestController.class
-com\bootcamp\jsonRepository\BaseRepository.class
 com\bootcamp\TP\entities\one\Programme_Fournisseur_.class
 com\bootcamp\TP\entities\two\Programme_Beneficiaire_.class
+com\bootcamp\TP\rest\controllers\SwaggerDoc.class
 com\bootcamp\TP\entities\Programme_Fournisseur.class
 com\bootcamp\TP\entities\two\Bailleur_.class
 com\bootcamp\TP\rest\controllers\ProgrammeRestController.class
+com\bootcamp\TP\swagger\SwaggeDoc.class
 com\bootcamp\TP\entities\two\Programme_Bailleur_.class
 com\bootcamp\TP\entities\one\Fournisseur_.class
 com\bootcamp\TP\repositories\ProjetRepository.class
-com\bootcamp\jsonRepository\JsonRepo$1.class
 com\bootcamp\TP\rest\controllers\v2\BailleurRestController.class
 com\bootcamp\TP\entities\two\Projet_.class
 com\bootcamp\TP\entities\IndicateurQuantitatif.class
@@ -33,7 +34,7 @@ com\bootcamp\TP\entities\Programme_Beneficiaire.class
 com\bootcamp\TP\entities\one\Livrable_.class
 com\bootcamp\TP\entities\one\Programme_.class
 com\bootcamp\TP\entities\two\Personne_.class
-com\bootcamp\jsonRepository\JsonRepo.class
+com\bootcamp\TP\json\JavaToJson.class
 com\bootcamp\TP\entities\Personne.class
 com\bootcamp\TP\entities\two\IndicateurQuantitatif_.class
 com\bootcamp\TP\App.class
@@ -61,7 +62,6 @@ com\bootcamp\TP\enums\TypeDeBailleur.class
 com\bootcamp\TP\repositories\BailleurRepository.class
 com\bootcamp\TP\entities\Beneficiaire.class
 com\bootcamp\TP\entities\two\IndicateurPerformance_.class
-com\bootcamp\TP\LoadTestData.class
 com\bootcamp\TP\repositories\BaseRepository.class
 com\bootcamp\TP\repositories\BeneficiaireRepository.class
 com\bootcamp\TP\rest\controllers\Bailleur_ProgrammeRestController.class

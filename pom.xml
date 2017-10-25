@@ -40,7 +40,6 @@
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>eclipselink</artifactId>
             <version>2.5.2</version>
-            <scope>provided</scope>
         </dependency>
         
         <dependency>
@@ -94,12 +93,56 @@
             <version>1.0.4</version>
             <type>jar</type>
         </dependency>
+        
         <dependency>
             <groupId>org.eclipse.persistence</groupId>
             <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
             <version>2.5.2</version>
             <scope>provided</scope>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/io.swagger/swagger-annotations -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-annotations</artifactId>
+            <version>1.5.16</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/io.swagger/swagger-core -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-core</artifactId>
+            <version>1.5.16</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/io.swagger/swagger-jaxrs -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-jaxrs</artifactId>
+            <version>1.5.16</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/io.swagger/swagger-jersey2-jaxrs -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-jersey2-jaxrs</artifactId>
+            <version>1.5.16</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/io.swagger/swagger-parser -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-parser</artifactId>
+            <version>1.0.28</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/io.swagger/swagger-codegen -->
+        <dependency>
+            <groupId>io.swagger</groupId>
+            <artifactId>swagger-codegen</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+        
     </dependencies>
     
     <properties>
@@ -127,6 +170,72 @@
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${jettyVersion}</version>
+            </plugin>
+            
+            <plugin>
+                <groupId>com.github.kongchen</groupId>
+                <artifactId>swagger-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                        <apiSources>
+                            <apiSource>
+                                <springmvc>false</springmvc>
+                <locations>
+                    <location>com.bootcamp.TP.rest.bailleur</location>
+                </locations>
+                <schemes>
+                    <scheme>http</scheme>
+                    <scheme>https</scheme>
+                </schemes>
+                <host>localhost:8080</host>
+                <basePath>/api</basePath>
+                <info>
+                    <title>Swagger Maven Plugin Sample</title>
+                    <version>v1</version>
+                    <!-- use markdown here because I'm using markdown for output,
+                    if you need to use html or other markup language, you need to use your target language,
+                     and note escape your description for xml -->
+                    <description>
+                        This is a sample.
+                    </description>
+                    <termsOfService>
+                        http://www.github.com/kongchen/swagger-maven-plugin
+                    </termsOfService>
+                    <contact>
+                        <email>kongchen@gmail.com</email>
+                        <name>Kong Chen</name>
+                        <url>http://kongch.com</url>
+                    </contact>
+                    <license>
+                        <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
+                        <name>Apache 2.0</name>
+                    </license>
+                </info>
+                <securityDefinitions>
+                    <securityDefinition>
+                        <name>basicAuth</name>
+                        <type>basic</type>
+                    </securityDefinition>
+                    <securityDefinition>
+                        <json>/securityDefinition.json</json>
+                    </securityDefinition>
+                </securityDefinitions>
+                <!-- Support classpath or file absolute path here.
+                1) classpath e.g: "classpath:/markdown.hbs", "classpath:/templates/hello.html"
+                2) file e.g: "${basedir}/src/main/resources/markdown.hbs",
+                    "${basedir}/src/main/resources/template/hello.html" -->
+<!--                <templatePath>${basedir}/src/test/resources/strapdown.html.hbs</templatePath>
+                <outputPath>${basedir}/generated/document.html</outputPath>-->
+                <swaggerDirectory>${basedir}/generated/swagger-ui</swaggerDirectory>
+                <swaggerApiReader>com.wordnik.swagger.jaxrs.reader.DefaultJaxrsApiReader</swaggerApiReader>
+                <attachSwaggerArtifact>true</attachSwaggerArtifact>
+                <modelConverters>io.swagger.validator.BeanValidator</modelConverters>
+                <swaggerExtensions>
+                    <swaggerExtension>com.example.VendorExtension</swaggerExtension>
+                </swaggerExtensions>
+                                </apiSource>
+                        </apiSources>
+                </configuration>
             </plugin>
             
         </plugins>
