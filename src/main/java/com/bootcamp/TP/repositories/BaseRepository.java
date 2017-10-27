@@ -7,6 +7,7 @@
 package com.bootcamp.TP.repositories;
 
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -85,6 +86,18 @@ public abstract class BaseRepository<T> {
        
         return true;
     }
+    
+    //a revoir
+    public T updateById(int id, Object value) throws SQLException {
+        
+          String className = entityClass.getSimpleName();
+         
+        String request = "select t from " + className + " t where t." + id + "=:param";
+        Query query = getEm().createQuery(request);
+        query.setParameter("param", value);
+        return (T) query.getSingleResult();
+
+    }
 
     /**
      * M�thode de recherche des informations
@@ -128,6 +141,23 @@ public abstract class BaseRepository<T> {
        String req="select t from " + className + " t";
        Query query=getEm().createQuery(req);
         return query.getResultList();
+    }
+    
+    /**
+     * M�thode findInstancesBetweenDates
+     *
+     * @param  debutFin
+     * @return List<T>
+     * @throws java.sql.SQLException
+     */
+    public List<T> findInstancesBetweenDates(Date debutFin[]) throws SQLException {
+        String className = entityClass.getSimpleName();
+        String query = "select t from " + className + " t where t.dateDeLivraison BETWEEN "
+                + ":debut AND :fin";
+        Query qry = getEntityManager().createQuery(query);
+        qry.setParameter("debut", debutFin[0]);
+        qry.setParameter("fin", debutFin[1]);
+        return qry.getResultList();
     }
 
     /**

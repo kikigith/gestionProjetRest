@@ -12,7 +12,6 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -23,7 +22,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "tp_programme_bailleur")
-//@IdClass(ProgrammeBailleurId.class)
+@IdClass(ProgrammeBailleurId.class)
 public class Programme_Bailleur implements Serializable  {
     
     @Id
