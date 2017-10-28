@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="TPPU-MYSQL" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>com.bootcamp.TP.entities.Bailleur</class>
+    <class>com.bootcamp.TP.entities.Beneficiaire</class>
+    <class>com.bootcamp.TP.entities.Fournisseur</class>
+    <class>com.bootcamp.TP.entities.IndicateurPerformance</class>
+    <class>com.bootcamp.TP.entities.IndicateurQualitatif</class>
+    <class>com.bootcamp.TP.entities.IndicateurQuantitatif</class>
+    <class>com.bootcamp.TP.entities.Livrable</class>
+    <class>com.bootcamp.TP.entities.Personne</class>
+    <class>com.bootcamp.TP.entities.Programme</class>
+    <class>com.bootcamp.TP.entities.Projet</class>
+    <class>com.bootcamp.TP.entities.Programme_Bailleur</class>
+    <class>com.bootcamp.TP.entities.Programme_Beneficiaire</class>
+    <class>com.bootcamp.TP.entities.Programme_Fournisseur</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/tpjpa?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="eclipselink.canonicalmodel.subpackage" value="two"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="TPPU-DERBY" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    
+    <class>com.bootcamp.TP.entities.Bailleur</class>
+    <class>com.bootcamp.TP.entities.Beneficiaire</class>
+    <class>com.bootcamp.TP.entities.Fournisseur</class>
+    <class>com.bootcamp.TP.entities.IndicateurPerformance</class>
+    <class>com.bootcamp.TP.entities.IndicateurQualitatif</class>
+    <class>com.bootcamp.TP.entities.IndicateurQuantitatif</class>
+    <class>com.bootcamp.TP.entities.Livrable</class>
+    <class>com.bootcamp.TP.entities.Personne</class>
+    <class>com.bootcamp.TP.entities.Programme</class>
+    <class>com.bootcamp.TP.entities.Projet</class>
+    <class>com.bootcamp.TP.entities.Programme_Bailleur</class>
+    <class>com.bootcamp.TP.entities.Programme_Beneficiaire</class>
+    <class>com.bootcamp.TP.entities.Programme_Fournisseur</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/TP"/>
+      <property name="javax.persistence.jdbc.user" value="sa"/>
+      <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver"/>
+      <property name="javax.persistence.jdbc.password" value="sa"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+      <property name="eclipselink.canonicalmodel.subpackage" value="one"/>
+    </properties>
+  </persistence-unit>
+  
+</persistence>
