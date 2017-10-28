@@ -6,19 +6,28 @@
 
 package com.bootcamp.TP.rest.controllers.v3;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import com.bootcamp.TP.entities.Programme;
-import com.bootcamp.TP.repositories.ProgrammeRepository;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import com.bootcamp.TP.entities.Programme;
+import com.bootcamp.TP.repositories.ProgrammeRepository;
+
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
 
 /**
  *
@@ -87,5 +96,30 @@ public class ProgrammeRestController {
         
 
     }
+      
+      @GET
+  	@ApiOperation(
+  			value="lesProgrammeDunePeriode",
+  			notes="Liste les Programmes d'une période définie",
+  			response=Programme.class,
+  			responseContainer="List"
+  			)
+  	@ApiResponse(
+  			code=404, 
+  			message="Aucun Programme dans la période définie"
+  			)
+  	@Produces(MediaType.APPLICATION_JSON)
+  	public Response lesProgrammeDunePeriode(@QueryParam("debut") String debut,
+  			@QueryParam("fin") String fin) throws SQLException,ParseException{
+  		Date []debutFin=new Date [2];
+  		String format="yyyy-MM-dd";
+  		SimpleDateFormat sdf=new SimpleDateFormat(format);
+  		debutFin[0]=sdf.parse(debut);
+  		debutFin[1]=sdf.parse(fin);
+  		List<Programme> lesProgrammes=programmeRepository.findInstancesBetweenDates(debutFin);
+  		return (lesProgrammes!=null) ? Response.status(200).entity(lesProgrammes).build():
+  			Response.status(404).entity(lesProgrammes).build();
+
+  	}
 
 }

@@ -6,25 +6,30 @@
 
 package com.bootcamp.TP.rest.controllers.v3;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import com.bootcamp.TP.entities.Projet;
-import com.bootcamp.TP.repositories.ProjetRepository;
 import java.sql.SQLException;
 import java.util.List;
+
 import javax.ws.rs.Consumes;
+import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
+import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import com.bootcamp.TP.entities.Projet;
+import com.bootcamp.TP.repositories.ProjetRepository;
+import com.wordnik.swagger.annotations.Api;
+import com.wordnik.swagger.annotations.ApiOperation;
 
 /**
  *
  * @author ARESKO
  */
-@Path("/projet")
+@Path("/projet") 
+@Api(value="/projet", description="Gestion des projets")
 public class ProjetRestController {
     
     //instanciation d'un livrable repository
@@ -34,6 +39,12 @@ public class ProjetRestController {
     @GET
     @Path("/list")
     @Produces(MediaType.APPLICATION_JSON)
+    @ApiOperation( 
+    		value="List",
+			notes="liste des projets",
+			response=Projet.class,
+			responseContainer="Projet"
+    		)
     public Response getList() throws SQLException{
        
        List<Projet> projets= projetRepository.findAll();

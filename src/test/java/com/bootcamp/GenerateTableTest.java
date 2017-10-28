@@ -22,7 +22,7 @@ public class GenerateTableTest {
     
     @Test
     public void generateTables(){
-        Persistence.createEntityManagerFactory(persistOne, new Properties() {});
+//        Persistence.createEntityManagerFactory(persistOne, new Properties() {});
         Persistence.createEntityManagerFactory(persistTwo, new Properties() {});
     }
     

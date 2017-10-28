@@ -40,7 +40,7 @@ import javax.ws.rs.core.Response;
 public class BailleurRestController {
 
     //instanciation d'un bailleur repository
-    BailleurRepository bailleurRepository = new BailleurRepository("TPPU-DERBY");
+    BailleurRepository bailleurRepository = new BailleurRepository("TPPU-MYSQL");
 
     @GET
     @Path("/list")

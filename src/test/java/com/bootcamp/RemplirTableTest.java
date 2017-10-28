@@ -98,14 +98,14 @@ public class RemplirTableTest {
         bailleur5.setNom("EKLOU");
         bailleur5.setTypeDeBailleur(TypeDeBailleur.Prive);
         
-        BailleurRepository br1 = new BailleurRepository(persistOne);
+//        BailleurRepository br1 = new BailleurRepository(persistOne);
         BailleurRepository br2 = new BailleurRepository(persistTwo);
         
-        br1.create(bailleur1);
-        br1.create(bailleur2);
-        br1.create(bailleur3);
-        br1.create(bailleur4);
-        br1.create(bailleur5);
+//        br1.create(bailleur1);
+//        br1.create(bailleur2);
+//        br1.create(bailleur3);
+//        br1.create(bailleur4);
+//        br1.create(bailleur5);
         
         br2.create(bailleur1);
         br2.create(bailleur2);
@@ -133,14 +133,14 @@ public class RemplirTableTest {
         benef5.setId(5);
         benef5.setNom("JOSEPH");
         
-        BeneficiaireRepository br1 = new BeneficiaireRepository(persistOne);
+//        BeneficiaireRepository br1 = new BeneficiaireRepository(persistOne);
         BeneficiaireRepository br2 = new BeneficiaireRepository(persistTwo);
         
-        br1.create(benef1);
-        br1.create(benef2);
-        br1.create(benef3);
-        br1.create(benef4);
-        br1.create(benef5);
+//        br1.create(benef1);
+//        br1.create(benef2);
+//        br1.create(benef3);
+//        br1.create(benef4);
+//        br1.create(benef5);
         
         br2.create(benef1);
         br2.create(benef2);
@@ -168,14 +168,14 @@ public class RemplirTableTest {
         fourniss5.setId(5);
         fourniss5.setNom("LANDRY");
         
-        FournisseurRepository br1 = new FournisseurRepository(persistOne);
+//        FournisseurRepository br1 = new FournisseurRepository(persistOne);
         FournisseurRepository br2 = new FournisseurRepository(persistTwo);
         
-        br1.create(fourniss1);
-        br1.create(fourniss2);
-        br1.create(fourniss3);
-        br1.create(fourniss4);
-        br1.create(fourniss5);
+//        br1.create(fourniss1);
+//        br1.create(fourniss2);
+//        br1.create(fourniss3);
+//        br1.create(fourniss4);
+//        br1.create(fourniss5);
         
         br2.create(fourniss1);
         br2.create(fourniss2);
@@ -228,14 +228,14 @@ public class RemplirTableTest {
         progr5.setDateDeFin(new Date());
         progr5.setObjectif("objectif5");
         
-        ProgrammeRepository br1 = new ProgrammeRepository(persistOne);
+//        ProgrammeRepository br1 = new ProgrammeRepository(persistOne);
         ProgrammeRepository br2 = new ProgrammeRepository(persistTwo);
         
-        br1.create(progr1);
-        br1.create(progr2);
-        br1.create(progr3);
-        br1.create(progr4);
-        br1.create(progr5);
+//        br1.create(progr1);
+//        br1.create(progr2);
+//        br1.create(progr3);
+//        br1.create(progr4);
+//        br1.create(progr5);
         
         br2.create(progr1);
         br2.create(progr2);
@@ -286,14 +286,14 @@ public class RemplirTableTest {
         proj5.setDateDeFin(new Date());
         proj5.setObjectif("objectif55");
         
-        ProjetRepository br1 = new ProjetRepository(persistOne);
+//        ProjetRepository br1 = new ProjetRepository(persistOne);
         ProjetRepository br2 = new ProjetRepository(persistTwo);
         
-        br1.create(proj1);
-        br1.create(proj2);
-        br1.create(proj3);
-        br1.create(proj4);
-        br1.create(proj5);
+//        br1.create(proj1);
+//        br1.create(proj2);
+//        br1.create(proj3);
+//        br1.create(proj4);
+//        br1.create(proj5);
         
         br2.create(proj1);
         br2.create(proj2);
@@ -330,14 +330,14 @@ public class RemplirTableTest {
         livr5.setDateDeDebut(new Date());
         livr5.setDateDeLivraison(new Date());
         
-        LivrableRepository br1 = new LivrableRepository(persistOne);
+//        LivrableRepository br1 = new LivrableRepository(persistOne);
         LivrableRepository br2 = new LivrableRepository(persistTwo);
         
-        br1.create(livr1);
-        br1.create(livr2);
-        br1.create(livr3);
-        br1.create(livr4);
-        br1.create(livr5);
+//        br1.create(livr1);
+//        br1.create(livr2);
+//        br1.create(livr3);
+//        br1.create(livr4);
+//        br1.create(livr5);
         
         br2.create(livr1);
         br2.create(livr2);
